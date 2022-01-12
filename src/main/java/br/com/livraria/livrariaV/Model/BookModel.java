@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.persistence.*;
 
@@ -13,19 +14,15 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table
-public class UserModel {
+public class BookModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Integer idBook;
 
-    private String name;
-    private String email;
+    private String title;
+    private String author;
+    private String status;
 
-   // UserModel user = new UserModel();
 
 }
-
-
-
-
