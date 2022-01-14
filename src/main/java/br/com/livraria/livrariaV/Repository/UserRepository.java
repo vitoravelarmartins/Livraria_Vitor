@@ -15,4 +15,5 @@ public interface UserRepository extends JpaRepository<UserModel, Integer> {
     public List<UserModel> findByIdGreaterThan(int id);
 
     public List<UserModel> findByNameIgnoreCase(String name);
+
 }

@@ -25,6 +25,8 @@ public class BookController {
     //Post Criar Livros
     @PostMapping("/create")
     public BookModel bookAdd(@RequestBody BookModel book) {
+        var readyToUse = "DISPONIVEL";
+        book.setStatusBook(readyToUse);
         return this.bookRepository.save(book);
     }
 
@@ -34,8 +36,8 @@ public class BookController {
         return this.bookRepository.findAll();
     }
 
-    @PutMapping("/{idBook}/locar")
-    public void bookRent(@PathVariable("idBook") Integer idBook, @RequestBody BookModel bookDetails) throws Exception {
+    @PutMapping("/{idBook}/edit")
+    public void bookEdit(@PathVariable("idBook") Integer idBook, @RequestBody BookModel bookDetails) throws Exception {
 
         var b = bookRepository.findById(idBook);
         var novoBook = b.get();
@@ -44,7 +46,7 @@ public class BookController {
         System.out.println(novoBook.getAuthor());
         novoBook.setTitle(bookDetails.getTitle());
         novoBook.setAuthor(bookDetails.getAuthor());
-        novoBook.setStatus(bookDetails.getStatus());
+        novoBook.setStatusBook(bookDetails.getStatusBook());
         bookRepository.save(novoBook);
 
 
@@ -61,12 +63,14 @@ public class BookController {
 
         book.setTitle(bookDetails.getTitle());
         book.setAuthor(bookDetails.getAuthor());
-        book.setStatus(bookDetails.getStatus());
+        book.setStatusBook(bookDetails.getStatusBook());
 
         BookModel updatedBook = bookRepository.save(book);
 
         return updatedBook;
     }
+
+
 
 
 }

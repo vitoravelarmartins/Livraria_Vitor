@@ -21,8 +21,9 @@ public class UserModel {
 
     private String name;
     private String email;
+    private String statusUser;
 
-   // UserModel user = new UserModel();
+    // UserModel user = new UserModel();
 
 }
 
