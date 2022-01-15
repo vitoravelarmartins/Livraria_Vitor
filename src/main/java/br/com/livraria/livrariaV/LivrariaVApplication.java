@@ -10,4 +10,5 @@ public class LivrariaVApplication {
 		SpringApplication.run(LivrariaVApplication.class, args);
 	}
 
+
 }

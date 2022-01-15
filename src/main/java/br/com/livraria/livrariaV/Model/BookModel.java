@@ -26,9 +26,9 @@ public class BookModel {
     private String title;
     @Column(nullable = false)
     private String author;
-    @Column (length = 10)
+    @Column (length = 50)
     public String dateRent;
-    @Column (length = 10)
+    @Column (length = 50)
     private String dateDelivery;
     @Column(nullable = false)
     private String statusBook;

@@ -8,12 +8,5 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface UserRepository extends JpaRepository<UserModel, Integer> {
-
-    @Query("SELECT u from UserModel u Where u.id>:id")
-    public List<UserModel> findAllMoreThan(@Param("id") int id);
-
-    public List<UserModel> findByIdGreaterThan(int id);
-
-    public List<UserModel> findByNameIgnoreCase(String name);
-
+        public List<UserModel> findByNameIgnoreCase(String name);
 }
