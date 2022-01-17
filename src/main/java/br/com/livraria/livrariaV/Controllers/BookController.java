@@ -46,7 +46,6 @@ public class BookController {
         return this.bookRepository.findByTitleIgnoreCase(title);
     }
     //GET - Lista todos os livros, verifica data e seta status do usuario EX. "Atrasado"
-    @EventListener(ApplicationReadyEvent.class)
     @GetMapping("/list")
     public List<BookModel> listBook() throws Exception {
 
